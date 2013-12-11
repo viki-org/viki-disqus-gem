@@ -64,3 +64,11 @@ var disqus_config = function () {
   this.page.api_key = '<%= VikiDisqus::SSO::DISQUS_PUBLIC_KEY %>';
 }
 ```
+
+## Running Tests
+
+`bundle exec rspec spec`
+
+or
+
+`rspec spec`
