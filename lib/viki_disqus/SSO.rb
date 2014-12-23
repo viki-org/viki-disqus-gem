@@ -12,7 +12,7 @@ module VikiDisqus
     end
 
     def self.signature(opts, timestamp)
-      OpenSSL::HMAC.hexdigest(OpenSSL::Digest::Digest.new('sha1'),
+      OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha1'),
                               DISQUS_SECRET_KEY,
                               "#{message(opts)} #{timestamp}")
     end

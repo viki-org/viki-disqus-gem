@@ -8,7 +8,7 @@ describe VikiDisqus::SSO do
   describe "#signature" do
     it "generate the signature of a given user" do
       described_class.signature(user_hash, timestamp).should ==
-          OpenSSL::HMAC.hexdigest(OpenSSL::Digest::Digest.new('sha1'),
+          OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha1'),
                                   VikiDisqus::SSO::DISQUS_SECRET_KEY,
                                   "#{Base64.strict_encode64(user_hash.to_json).gsub("\n", "")} #{timestamp}")
     end
